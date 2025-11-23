@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodai Nakamura | Physicist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        
+        .bg-animate {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -20px); }
+        }
+    </style>
+</head>
+<body class="bg-animate text-white min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+
+    <div class="glow-orb w-64 h-64 bg-indigo-600 top-10 left-10 opacity-30"></div>
+    <div class="glow-orb w-96 h-96 bg-purple-600 bottom-10 right-10 opacity-20 animation-delay-2000"></div>
+
+    <main class="z-10 text-center max-w-2xl px-6">
+        
+        <p class="text-indigo-300 font-medium tracking-widest uppercase mb-4 text-sm animate-pulse">
+            Hiroshima Univ. / Quark Physics
+        </p>
+
+        <h1 class="text-6xl sm:text-7xl font-bold mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+            Yodai Nakamura
+        </h1>
+
+        <p class="text-slate-300 text-lg sm:text-xl leading-relaxed mb-10 font-light">
+            Exploring the fundamental particles of the universe.<br>
+            Specializing in <span class="text-white font-medium">MAPS detectors</span>, <span class="text-white font-medium">Geant4</span> simulation, and <span class="text-white font-medium">ROOT</span> analysis.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center w-full">
+            <a href="research.html" class="group relative px-8 py-3 bg-white text-slate-900 font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                <span class="relative z-10">View Research</span>
+                <div class="absolute inset-0 bg-indigo-100 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </a>
+
+            <a href="https://github.com/" target="_blank" class="px-8 py-3 border border-slate-600 text-slate-300 rounded-full font-medium hover:bg-slate-800 hover:text-white transition-all hover:border-slate-500">
+                GitHub Profile
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="absolute bottom-6 text-slate-500 text-xs">
+        &copy; 2025 Yodai Nakamura. Designed with Code.
+    </footer>
+
+</body>
+</html>
