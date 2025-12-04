@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects - Hinata's Homepage</title>
+    <style>
+        /* 全体のスタイル */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8; /* 日本語向けに行間を少し広げました */
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+        
+        /* ヘッダー */
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+        }
+        h1 { margin: 0; color: #222; }
+        nav { margin-top: 15px; }
+        nav a { margin-right: 20px; text-decoration: none; color: #0056b3; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+
+        /* プロジェクト紹介セクションのスタイル */
+        .project-section {
+            display: flex; /* 横並びにする設定 */
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* 偶数番目のプロジェクトは左右を入れ替える */
+        .project-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-text {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 300px;
+        }
+
+        .project-image {
+            flex: 1;
+            padding: 10px;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0056b3;
+            font-size: 1.5em;
+            border-left: 5px solid #0056b3; /* 見出しの左にアクセントを追加 */
+            padding-left: 10px;
+        }
+
+        .keywords {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: bold;
+            background-color: #f0f8ff;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* スマホ向けの調整 */
+        @media (max-width: 768px) {
+            .project-section, .project-section:nth-child(even) {
+                flex-direction: column;
+            }
+            .project-text, .project-image {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Research Projects</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="jrock.html">Hobby</a>
+        </nav>
+    </header>
+
+    <div style="margin-bottom: 60px; max-width: 800px;">
+        <p>
+            どうも。広島のしがない物理学徒です。<br>
+            僕の研究テーマは、KEK（高エネルギー加速器研究機構）でのビームテスト（検出器の性能評価のためのテスト）を円滑に進めるために、
+            <strong>MALTA2</strong>というATLAS実験で使われるMAPSの一種をReference Planeとしてtelescopeを設置することです。
+        </p>
+    </div>
+
+    <section class="project-section">
+        <div class="project-text">
+            <h2>Construction of Beam Telescope at KEK</h2>
+            <div class="keywords">Keywords: MALTA2, Beam Test, Hardware Setup</div>
+            <p>
+                現在取り組んでいるメインプロジェクトは、KEKにおけるビームテレスコープの設置です。
+                目標は、ユーザーが自分のDUT（Device Under Test：試験対象の検出器）を持ち込むだけで、すぐにビームテストを行えるようなユーザーフレンドリーな環境を構築することです。
+            </p>
+            <p>
+                Reference Plane として後述するMALTA2を使用することで、高精度なトラッキングを実現します。
+                このセットアップには、精密なアライメント調整と読み出しシステムの統合が必要となります。
+            </p>
+        </div>
+        <div class="project-image">
+            <img src="images/telescope_setup.jpg" alt="Setup of the Beam Telescope at KEK">
+            <p style="font-size:0.8em; color:#888;">Fig 1. テレスコープ設置の概念図</p>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="project-text">
+            <h2>What is MALTA2?</h2>
+            <div class="keywords">Keywords: MAPS, ATLAS, CMOS Sensor</div>
+            <p>（
+                本研究の核となる<strong>MALTA2</strong>は、CERNのATLAS実験などの将来的なアップグレードに向けて開発された、Monolithic Active Pixel Sensor）の一種です。
+            </p>
+            <p>
+                従来のハイブリッドピクセル検出器とは異なり、センサーと読み出し回路が一体化されているのが特徴です。
+                高い放射線耐性と高速な読み出し性能を兼ね備えており、これをテレスコープのReference Planeに用いることで、高レート環境下でも正確な飛跡検出が可能になります。
+            </p>
+        </div>
+        <div class="project-image">
+            <img src="images/malta_chip.jpg" alt="MALTA2 Sensor Chip">
+            <p style="font-size:0.8em; color:#888;">Fig 2. MALTA2 センサーチップ</p>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="project-text">
+            <h2>Simulation Study with Allpix Squared</h2>
+            <div class="keywords">Keywords: Allpix², Corryvreckan, Geant4</div>
+            <p>
+                ハードウェアのセットアップと並行して、<strong>Allpix Squared</strong>を用いたモンテカルロシミュレーションも行っています。
+                Geant4ベースの物理プロセス計算を通じて、検出器の応答やテレスコープの分解能（Resolution）を評価しています。
+            </p>
+            <p>
+                また、再構成フレームワークである<strong>Corryvreckan</strong>を使用し、シミュレーションデータから飛跡を再構成することで、
+                実際のビームテストに向けたジオメトリの最適化を調べています。
+            </p>
+        </div>
+        <div class="project-image">
+            <img src="images/simulation_result.png" alt="Simulation results showing particle tracks">
+            <p style="font-size:0.8em; color:#888;">Fig 3. シミュレーションによる飛跡再構成の様子</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hinata. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
