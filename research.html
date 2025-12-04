@@ -48,6 +48,9 @@
             border-radius: 9999px;
             font-weight: 500;
         }
+
+        /* 言語切り替え用ユーティリティ */
+        .hidden { display: none; }
     </style>
 </head>
 <body class="bg-animate text-white min-h-screen relative selection:bg-indigo-500 selection:text-white">
@@ -62,17 +65,31 @@
             <h1 class="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-indigo-200">
                 Research Projects
             </h1>
-            <nav class="flex gap-4">
-                <a href="index.html" class="px-4 py-2 rounded-full border border-slate-600 text-sm hover:bg-white hover:text-slate-900 transition-colors">Home</a>
-                <a href="jrock.html" class="px-4 py-2 rounded-full border border-slate-600 text-sm hover:bg-white hover:text-slate-900 transition-colors">Hobby</a>
-            </nav>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/50 bg-indigo-500/10 text-xs font-bold hover:bg-indigo-500/30 transition-all cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                    <span id="lang-btn-text">English</span>
+                </button>
+
+                <nav class="flex gap-4">
+                    <a href="index.html" class="px-4 py-2 rounded-full border border-slate-600 text-sm hover:bg-white hover:text-slate-900 transition-colors">Home</a>
+                    <a href="jrock.html" class="px-4 py-2 rounded-full border border-slate-600 text-sm hover:bg-white hover:text-slate-900 transition-colors">Hobby</a>
+                </nav>
+            </div>
         </header>
 
         <div class="glass-card rounded-2xl p-8 shadow-xl mb-12">
             <p class="text-slate-300 leading-relaxed text-lg">
-                どうも。広島のしがない物理学徒です。<br>
-                僕の研究テーマは、KEK（高エネルギー加速器研究機構）でのビームテストを円滑に進めるために、
-                <strong class="text-indigo-300">MALTA2</strong>というATLAS実験で使われるMAPSの一種をReference Planeとしてtelescopeを設置することです。
+                <span class="lang-jp">
+                    どうも。広島のしがない物理学徒です。<br>
+                    僕の研究テーマは、KEK（高エネルギー加速器研究機構）でのビームテストを円滑に進めるために、
+                    <strong class="text-indigo-300">MALTA2</strong>というATLAS実験で使われるMAPSの一種をReference Planeとしてtelescopeを設置することです。
+                </span>
+                <span class="lang-en hidden">
+                    Hello. I am a humble physics student in Hiroshima.<br>
+                    My research theme is to install a telescope using <strong class="text-indigo-300">MALTA2</strong>, a type of MAPS used in the ATLAS experiment, as a reference plane to facilitate beam tests at KEK (High Energy Accelerator Research Organization).
+                </span>
             </p>
         </div>
 
@@ -87,18 +104,32 @@
                             <span class="keyword-tag">Beam Test</span>
                             <span class="keyword-tag">Hardware Setup</span>
                         </div>
-                        <p class="text-slate-400 mb-4 leading-relaxed">
-                            現在取り組んでいるメインプロジェクトは、KEKにおけるビームテレスコープの設置です。
-                            目標は、ユーザーが自分のDUT（Device Under Test）を持ち込むだけで、すぐにビームテストを行える環境を構築することです。
-                        </p>
-                        <p class="text-slate-400 leading-relaxed">
-                            Reference PlaneとしてMALTA2センサを使用することで、高精度なトラッキングを実現します。精密なアライメント調整と読み出しシステムの統合を行っています。
-                        </p>
+                        <div class="text-slate-400 mb-4 leading-relaxed">
+                            <span class="lang-jp">
+                                現在取り組んでいるメインプロジェクトは、KEKにおけるビームテレスコープの設置です。
+                                目標は、ユーザーが自分のDUT（Device Under Test）を持ち込むだけで、すぐにビームテストを行える環境を構築することです。
+                            </span>
+                            <span class="lang-en hidden">
+                                My current main project is setting up a beam test telescope at KEK.
+                                The goal is to create a user-friendly environment where users only need to bring their DUT (Device Under Test) to immediately perform beam tests.
+                            </span>
+                        </div>
+                        <div class="text-slate-400 leading-relaxed">
+                            <span class="lang-jp">
+                                Reference PlaneとしてMALTA2センサを使用することで、高精度なトラッキングを実現します。精密なアライメント調整と読み出しシステムの統合を行っています。
+                            </span>
+                            <span class="lang-en hidden">
+                                We utilize the MALTA2 sensor as a reference plane to achieve high-precision tracking. This setup requires precise mechanical alignment and integration of the readout systems.
+                            </span>
+                        </div>
                     </div>
                     <div class="order-1 md:order-2">
                         <div class="bg-black/20 p-2 rounded-xl border border-white/10">
                             <img src="images/telescope_setup.jpg" alt="Setup of the Beam Telescope" class="rounded-lg w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                            <p class="text-center text-xs text-slate-500 mt-2">Fig 1. テレスコープ設置の概念図</p>
+                            <p class="text-center text-xs text-slate-500 mt-2">
+                                <span class="lang-jp">Fig 1. テレスコープ設置の概念図</span>
+                                <span class="lang-en hidden">Fig 1. Conceptual design of the telescope setup</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -106,23 +137,37 @@
 
             <div class="glass-card rounded-2xl p-8 shadow-xl">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="order-2 md:order-2"> <h2 class="text-2xl font-bold text-purple-300 mb-3">What is MALTA2?</h2>
+                    <div class="order-2 md:order-2">
+                        <h2 class="text-2xl font-bold text-purple-300 mb-3">What is MALTA2?</h2>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="keyword-tag">MAPS</span>
                             <span class="keyword-tag">ATLAS</span>
                             <span class="keyword-tag">CMOS Sensor</span>
                         </div>
-                        <p class="text-slate-400 mb-4 leading-relaxed">
-                            本研究の核となるMALTA2は、CERNのATLAS実験などの将来的なアップグレードに向けて開発された、Monolithic Active（MAPS）の一種です。
-                        </p>
-                        <p class="text-slate-400 leading-relaxed">
-                            センサーと読み出し回路が一体化されており、高い放射線耐性と高速な読み出し性能を兼ね備えています。これを参照面に用いることで、高レート環境下でも正確な飛跡検出が可能になります。
-                        </p>
+                        <div class="text-slate-400 mb-4 leading-relaxed">
+                            <span class="lang-jp">
+                                本研究の核となるMALTA2は、CERNのATLAS実験などの将来的なアップグレードに向けて開発された、Monolithic Active Pixel Sensor（MAPS）の一種です。
+                            </span>
+                            <span class="lang-en hidden">
+                                MALTA2, the core of this research, is a type of Monolithic Active Pixel Sensor (MAPS) developed for future upgrades of experiments like ATLAS at CERN.
+                            </span>
+                        </div>
+                        <div class="text-slate-400 leading-relaxed">
+                            <span class="lang-jp">
+                                センサーと読み出し回路が一体化されており、高い放射線耐性と高速な読み出し性能を兼ね備えています。これを参照面に用いることで、高レート環境下でも正確な飛跡検出が可能になります。
+                            </span>
+                            <span class="lang-en hidden">
+                                Unlike traditional detectors, the sensor and readout circuitry are integrated. It combines high radiation hardness with fast readout capabilities, enabling accurate tracking even in high-rate environments.
+                            </span>
+                        </div>
                     </div>
                     <div class="order-1 md:order-1">
                         <div class="bg-black/20 p-2 rounded-xl border border-white/10">
                             <img src="images/malta_chip.jpg" alt="MALTA2 Sensor Chip" class="rounded-lg w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                            <p class="text-center text-xs text-slate-500 mt-2">Fig 2. MALTA2 センサーチップ</p>
+                            <p class="text-center text-xs text-slate-500 mt-2">
+                                <span class="lang-jp">Fig 2. MALTA2 センサーチップ</span>
+                                <span class="lang-en hidden">Fig 2. MALTA2 Sensor Chip</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -137,17 +182,30 @@
                             <span class="keyword-tag">Corryvreckan</span>
                             <span class="keyword-tag">Geant4</span>
                         </div>
-                        <p class="text-slate-400 mb-4 leading-relaxed">
-                            ハードウェアのセットアップと並行して、Allpix Squaredを用いたモンテカルロシミュレーションも行っています。Geant4ベースの計算で、検出器の応答や分解能を評価しています。
-                        </p>
-                        <p class="text-slate-400 leading-relaxed">
-                            また、再構成フレームワークであるCorryvreckanを使用し、実際のビームテストに向けた最適なジオメトリを探しています。
-                        </p>
+                        <div class="text-slate-400 mb-4 leading-relaxed">
+                            <span class="lang-jp">
+                                ハードウェアのセットアップと並行して、Allpix Squaredを用いたモンテカルロシミュレーションも行っています。Geant4ベースの計算で、検出器の応答や分解能を評価しています。
+                            </span>
+                            <span class="lang-en hidden">
+                                In parallel with hardware setup, I perform Monte Carlo simulations using Allpix Squared. I evaluate detector response and resolution using Geant4-based calculations.
+                            </span>
+                        </div>
+                        <div class="text-slate-400 leading-relaxed">
+                            <span class="lang-jp">
+                                また、再構成フレームワークであるCorryvreckanを使用し、実際のビームテストに向けた最適なジオメトリを探しています。
+                            </span>
+                            <span class="lang-en hidden">
+                                I also use the reconstruction framework Corryvreckan to find the optimal geometry for upcoming beam tests and to study algorithms for distinguishing scattered signals.
+                            </span>
+                        </div>
                     </div>
                     <div class="order-1 md:order-2">
                         <div class="bg-black/20 p-2 rounded-xl border border-white/10">
                             <img src="images/MALTA2_tel.png" alt="Simulation results" class="rounded-lg w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                            <p class="text-center text-xs text-slate-500 mt-2">Fig 3. シミュレーションによる飛跡再構成</p>
+                            <p class="text-center text-xs text-slate-500 mt-2">
+                                <span class="lang-jp">Fig 3. シミュレーションによる飛跡再構成</span>
+                                <span class="lang-en hidden">Fig 3. Track reconstruction simulation</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -159,5 +217,28 @@
             &copy; 2025 Hinata Nakamura.
         </footer>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            const jpElements = document.querySelectorAll('.lang-jp');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnText = document.getElementById('lang-btn-text');
+            
+            // 現在日本語が表示されているかチェック（最初の要素で判定）
+            const isJpVisible = !jpElements[0].classList.contains('hidden');
+
+            if (isJpVisible) {
+                // 英語に切り替え
+                jpElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                btnText.textContent = "日本語"; // ボタンの文字を「日本語に戻す」という意味に変更
+            } else {
+                // 日本語に切り替え
+                jpElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                btnText.textContent = "English"; // ボタンの文字を「英語にする」という意味に変更
+            }
+        }
+    </script>
 </body>
 </html>
